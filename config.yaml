@@ -21,7 +21,7 @@ plugins:
             exec: forward 192.168.124.10
           - matches:
                 - client_ip ./rule/forward_2_fakeip.txt
-            exec: forward 192.168.124.10
+            exec: forward 192.168.124.6
           - exec: accept
 
     # IP 优选，需要定期修改，最好填写 2 - 4 个
