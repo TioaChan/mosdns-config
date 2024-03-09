@@ -17,10 +17,10 @@ plugins:
       type: sequence
       args:
           - matches:
-                - client_ip ./rule/forward_2_redir-host.txt
+                - client_ip $client_forward_2_redir-host
             exec: forward 192.168.124.10
           - matches:
-                - client_ip ./rule/forward_2_fakeip.txt
+                - client_ip $client_forward_2_fakeip
             exec: forward 192.168.124.6
           - exec: accept
 

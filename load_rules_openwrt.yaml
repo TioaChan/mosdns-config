@@ -129,6 +129,18 @@ plugins:
           files:
               - "./rule/fastly.txt" # https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/fastly.txt
 
+    - tag: client_forward_2_fakeip
+      type: ip_set
+      args:
+          files:
+              - "./rule/forward_2_fakeip.txt"
+
+    - tag: client_forward_2_redir-host
+      type: ip_set
+      args:
+          files:
+              - "./rule/forward_2_redir-host.txt"
+
     - tag: "cache_0"
       type: "cache"
       args:
