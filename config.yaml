@@ -13,6 +13,17 @@ include:
     - "./forward.yaml"
 
 plugins:
+    - tag: forward_to_openclash
+      type: sequence
+      args:
+          - matches:
+                - client_ip ./rule/forward_2_redir-host.txt
+            exec: forward 192.168.124.10
+          - matches:
+                - client_ip ./rule/forward_2_fakeip.txt
+            exec: forward 192.168.124.10
+          - exec: accept
+
     # IP 优选，需要定期修改，最好填写 2 - 4 个
     - tag: blackhole_akamai # 替换部分 AKAMAI 域名 IP，详见 https://github.com/IrineSistiana/mosdns/discussions/489
       type: sequence
