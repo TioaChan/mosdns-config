@@ -25,6 +25,14 @@ plugins:
             exec: forward 192.168.124.11
             exec: accept
 
+    - tag: force_to_fakeip
+      type: sequence
+      args:
+          - matches:
+                - qname $force_forward_2_fakeip
+            exec: forward 192.168.124.11
+            exec: accept
+
     - tag: forward_to_default_adg
       type: sequence
       args:

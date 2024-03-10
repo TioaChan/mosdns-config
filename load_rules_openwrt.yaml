@@ -141,6 +141,12 @@ plugins:
           files:
               - "./rule/forward_2_redir-host.txt"
 
+    - tag: force_forward_2_fakeip
+      type: domain_set
+      args:
+          files:
+              - "./rule/force_forward_2_fakeip.txt"
+
     - tag: "cache_0"
       type: "cache"
       args:
