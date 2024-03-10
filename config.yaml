@@ -24,6 +24,15 @@ plugins:
             exec: forward 192.168.124.6
           - exec: accept
 
+    - tag: forward_to_default_adg
+      type: sequence
+      args:
+          - matches:
+                - client_ip 192.168.124.0/23
+                - "!client_ip 192.168.124.5"
+            exec: forward 192.168.124.5
+          - exec: accept
+
     # IP 优选，需要定期修改，最好填写 2 - 4 个
     - tag: blackhole_akamai # 替换部分 AKAMAI 域名 IP，详见 https://github.com/IrineSistiana/mosdns/discussions/489
       type: sequence
