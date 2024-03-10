@@ -17,6 +17,7 @@ plugins:
       type: sequence
       args:
           - exec: forward 192.168.124.10
+          - exec: accept
 
     - tag: forward_to_fake-ip
       type: sequence
