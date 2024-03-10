@@ -18,10 +18,10 @@ plugins:
       args:
           - matches:
                 - client_ip $client_forward_2_redir-host
-            exec: forward 192.168.124.10:1745
+            exec: forward 192.168.124.10
           - matches:
                 - client_ip $client_forward_2_fakeip
-            exec: forward 192.168.124.11:1745
+            exec: forward 192.168.124.11
           - exec: accept
 
     - tag: forward_to_default_adg
@@ -29,6 +29,8 @@ plugins:
       args:
           - matches:
                 - client_ip 192.168.124.0/23
+                - "!client_ip 192.168.124.5"
+                - "!client_ip 192.168.124.5"
                 - "!client_ip 192.168.124.5"
             exec: forward 192.168.124.5
           - exec: accept
